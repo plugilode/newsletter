@@ -1,0 +1,16 @@
+.App {
+  text-align: center;
+}
+
+.App-header {
+  background-color: white;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.App-logo {
+  height: 60px;
+  pointer-events: none;
+} 

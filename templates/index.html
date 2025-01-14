@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="dark">
+    <title>Newsletter Search Tool</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="{{ url_for('static', filename='logo_plugilo_black.svg') }}" alt="Plugilo Logo" class="logo">
+        </header>
+
+        <div class="search-container">
+            <h1>Newsletter Search Tool</h1>
+            
+            <div class="search-form">
+                <input type="text" id="country" placeholder="Enter country">
+                <input type="text" id="city" placeholder="Enter city">
+                <input type="text" id="category" placeholder="Enter category">
+                <button id="searchBtn" onclick="searchStores()">Search</button>
+            </div>
+
+            <div id="status" class="status-container"></div>
+
+            <div class="verification-section">
+                <h2>Verify Existing Websites</h2>
+                <div class="file-upload">
+                    <input type="file" id="csvFile" accept=".csv">
+                    <label for="csvFile" class="file-upload-label">Upload CSV File</label>
+                </div>
+            </div>
+
+            <div id="error" class="error-message"></div>
+            <div id="results" class="results-grid"></div>
+            <div id="verificationResults" class="verification-results"></div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html> 

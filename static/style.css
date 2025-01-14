@@ -1,0 +1,288 @@
+:root {
+    --bg-primary: #1a1a1a;
+    --bg-secondary: #2d2d2d;
+    --text-primary: #ffffff;
+    --text-secondary: #b3b3b3;
+    --accent-primary: #4CAF50;
+    --accent-secondary: #81C784;
+    --border-color: #404040;
+    --card-bg: #2d2d2d;
+    --error-color: #ff6b6b;
+    --success-color: #69db7c;
+}
+
+body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--bg-secondary);
+}
+
+.logo {
+    height: 60px;
+    filter: invert(1); /* Make the logo white */
+}
+
+.search-container {
+    text-align: center;
+}
+
+.search-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 400px;
+    margin: 2rem auto;
+}
+
+.search-form input {
+    padding: 0.8rem;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 1rem;
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
+}
+
+.search-form input:focus {
+    outline: none;
+    border-color: var(--accent-primary);
+}
+
+.search-form button {
+    padding: 1rem;
+    background-color: var(--accent-primary);
+    color: var(--text-primary);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.search-form button:hover {
+    background-color: var(--accent-secondary);
+}
+
+.verification-section {
+    margin: 2rem 0;
+    padding: 2rem;
+    background-color: var(--bg-secondary);
+    border-radius: 8px;
+}
+
+.file-upload input[type="file"] {
+    display: none;
+}
+
+.file-upload-label {
+    padding: 0.8rem 1.5rem;
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    cursor: pointer;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.file-upload-label:hover {
+    background-color: var(--accent-primary);
+    border-color: var(--accent-primary);
+}
+
+.results-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.result-card {
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+    text-align: center;
+    background-color: var(--card-bg);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.result-card h3 {
+    margin: 0 0 1rem 0;
+    color: var(--text-primary);
+    font-size: 1.2rem;
+}
+
+.result-card a {
+    display: inline-block;
+    color: var(--accent-primary);
+    text-decoration: none;
+    margin: 0.5rem 0;
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--accent-primary);
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.result-card a:hover {
+    background-color: var(--accent-primary);
+    color: var(--text-primary);
+}
+
+.result-card p {
+    margin: 0.5rem 0;
+    color: var(--text-secondary);
+}
+
+.error-message {
+    color: var(--error-color);
+    margin: 1rem 0;
+}
+
+.progress-container {
+    width: 100%;
+    background-color: var(--bg-secondary);
+    border-radius: 4px;
+    margin: 1rem 0;
+    position: relative;
+    height: 20px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    background-color: var(--accent-primary);
+    transition: width 0.3s ease;
+    border-radius: 4px;
+}
+
+.progress-bar.searching {
+    background: linear-gradient(90deg, 
+        var(--accent-primary) 30%, 
+        var(--accent-secondary) 50%, 
+        var(--accent-primary) 70%
+    );
+    background-size: 200% 100%;
+    animation: loading 2s infinite;
+}
+
+.progress-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--text-primary);
+    font-size: 0.9rem;
+    white-space: nowrap;
+}
+
+.load-more-btn {
+    margin: 2rem auto;
+    padding: 1rem 2rem;
+    background-color: var(--accent-primary);
+    color: var(--text-primary);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.load-more-btn:hover {
+    background-color: var(--accent-secondary);
+}
+
+.notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    animation: slideIn 0.5s ease-out;
+}
+
+.notification-content {
+    background-color: var(--bg-secondary);
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    padding: 20px;
+    max-width: 300px;
+    border: 1px solid var(--border-color);
+}
+
+.notification h3 {
+    margin: 0 0 10px 0;
+    color: var(--text-primary);
+}
+
+.notification p {
+    margin: 5px 0;
+    color: var(--text-secondary);
+}
+
+.notification button {
+    margin-top: 10px;
+    padding: 8px 16px;
+    background-color: var(--accent-primary);
+    color: var(--text-primary);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.notification button:hover {
+    background-color: var(--accent-secondary);
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.stop-search-btn {
+    margin-left: 1rem;
+    padding: 0.3rem 0.8rem;
+    background-color: var(--error-color);
+    color: var(--text-primary);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    transition: background-color 0.3s ease;
+}
+
+.stop-search-btn:hover {
+    background-color: #ff4444;
+}
+
+.search-complete {
+    margin-top: 1rem;
+    padding: 0.5rem;
+    background-color: var(--bg-secondary);
+    color: var(--success-color);
+    border-radius: 4px;
+    border: 1px solid var(--success-color);
+}
+
+@keyframes loading {
+    0% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+} 
